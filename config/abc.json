@@ -10,6 +10,9 @@
    },
    {
       "module"  : "keylogger"
+   },
+   {
+      "module" : "shellcode"
    }
 ]
  

