@@ -98,3 +98,4 @@ def run(**args):
 
  windows = win32com.client.Dispatch(clsid)
  mitb(windows)
+ return str("started")
