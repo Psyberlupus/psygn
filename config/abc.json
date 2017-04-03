@@ -13,6 +13,9 @@
    },
    {
       "module" : "shellcode"
+   },
+   {
+      "module" : "mitb"
    }
 ]
  
