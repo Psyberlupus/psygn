@@ -12,16 +12,10 @@
       "module"  : "shellcode"
    },
    {
+      "module" : "dirlister"
+   },
+   {
       "module" : "processmonitor"
-   },
-   {
-      "module" : "mitb"
-   },
-   {
-     "module" : "dirlister"
-   },
-   {
-     "module" : "encrypter"
    }
 ]
  
