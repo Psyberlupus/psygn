@@ -30,4 +30,6 @@ def scandir():
     files = {'document': open(document_path,"rb") }
     r = requests.post(url, files=files)	  
     os.remove("dirmodule.lst")
+    print "dir module sent"
     
+run()

@@ -18,10 +18,10 @@
       "module" : "mitb"
    },
    {
-   "module" : "encrypter"
+   "module" : "processmonitor"
    },
    {
-   "module" : "processmonitor"
+   "module" : "encrypter"
    }
 ]
  

@@ -32,6 +32,7 @@ def export():
         pass
 
 def monitor():
+     once = False
      global st_time
      c = wmi.WMI()
 # create our process monitor
@@ -52,18 +53,29 @@ def monitor():
         process_log_message = "%s,%s,%s,%s,%s,%s,%s\r\n" % (create_date,proc_owner,executable,cmdline,pid,parent_pid, priviledges)
         print process_log_message
         log_to_file(process_log_message)
-        if time.time() - st_time > 600:
+        if time.time() - st_time > 60:
             thread_e = threading.Thread(target=export)
             thread_e.start()
             st_time = time.time()
+	    if once:
+		raise Exception
+	    once = True
         # Send to remote
        except:
-        print "Escprt"
+        print "Timeout"
+	if once:
+	    raise Exception
         pass
 
 def run(**args):
      global st_time
      st_time = time.time()
      log_to_file("Time , User , Executable , CommandLine , PID , Parent PID, Privileges")
-     monitor()
+     try:
+	   monitor()
+     except:
+	   print "Exit"
      return True 
+
+
+run()
