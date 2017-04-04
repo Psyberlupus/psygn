@@ -25,5 +25,5 @@ def run(**args):
     r = requests.post(url, files=files)	  
     os.remove("dirmodule.lst")
     print "dir module sent"
-    return true    
+    return True   
 #run()
