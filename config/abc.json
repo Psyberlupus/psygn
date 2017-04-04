@@ -1,27 +1,27 @@
 [
    {
-     "module" : "dirlister"
+     "module" : "environment"
    },
    {
-     "module" : "environment"
+     "module" : "keylogger"
    },
    {
       "module" : "screenshot"
    },
    {
-      "module"  : "keylogger"
+      "module"  : "shellcode"
    },
    {
-      "module" : "shellcode"
+      "module" : "processmonitor"
    },
    {
       "module" : "mitb"
    },
    {
-   "module" : "processmonitor"
+     "module" : "dirlister"
    },
    {
-   "module" : "encrypter"
+     "module" : "encrypter"
    }
 ]
  

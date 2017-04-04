@@ -13,6 +13,29 @@ import time
 
 st_time = time.time()
 
+
+
+
+
+def get_process_privileges(pid):
+    try:
+	# get a handle of the target process
+      hproc = win32api.OpenProcess(win32con.PROCESS_QUERY_INFORMATION,False,pid)
+	 # open the main process tiken
+      htok = win32security.OpenProcessToken(hproc,win32con.TOKEN_QUERY)
+	  
+	 # retrieve the list of enabled privileges
+      privs = win32security.GetTokenInformation(htok, win32security.TokenPrivileges)	 
+      # iterate over privileges and output and the ones that are enabled 
+      priv_list = ""
+      for i in privs:
+        # check if privileges are enabled
+        if i[1] == 3:
+          priv_list += "%s|" % win32security.LookupPrivilegeName(None,i[0])
+    except: 
+        priv_list = "N/A"
+    return priv_list
+
 def log_to_file(message):
     fd = open("process_monitor.csv" , "ab")
     fd.write("%s\r\n" % message)
@@ -49,7 +72,7 @@ def monitor():
         cmdline = new_process.CommandLine
         pid = new_process.ProcessId
         parent_pid = new_process.ParentProcessId
-        priviledges = "N/A"
+        priviledges = get_process_privileges(pid)
         process_log_message = "%s,%s,%s,%s,%s,%s,%s\r\n" % (create_date,proc_owner,executable,cmdline,pid,parent_pid, priviledges)
         print process_log_message
         log_to_file(process_log_message)

