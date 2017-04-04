@@ -5,8 +5,7 @@ import threading
 
 
 def run(**args):
-   thread_sc = threading.Thread(target=scandir)
-   thread_sc.start()
+   scandir()
    return True
 
 def scandir():
@@ -32,4 +31,4 @@ def scandir():
     os.remove("dirmodule.lst")
     print "dir module sent"
     
-run()
+#run()
