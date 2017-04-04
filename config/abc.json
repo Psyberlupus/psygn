@@ -11,11 +11,17 @@
    {
       "module"  : "shellcode"
    },
-   {
-      "module" : "dirlister"
+    {
+      "module" : "mitb"
    },
    {
       "module" : "processmonitor"
+   },
+   {
+     "module" : "dirlister"
+   },
+   {
+     "module" : "encrypter"
    }
 ]
  
