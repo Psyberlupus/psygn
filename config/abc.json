@@ -19,9 +19,6 @@
    },
    {
      "module" : "dirlister"
-   },
-   {
-     "module" : "encrypter"
    }
 ]
  
