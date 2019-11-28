@@ -1,8 +1,5 @@
 [
    {
-     "module" : "shellcode"
-   },
-   {
      "module" : "keylogger"
    },
    {
